@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encomienda Terrestre | LogísticaExpress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/encomiendaterrestre.css">
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="logo"><i class="fa-solid fa-truck-fast"></i> Logística<span>Express</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li class="dropdown">
+          <a href="servicios.html" class="dropdown-btn"><i class="fa-solid fa-boxes-packing"></i> Menú Servicios <i class="fa-solid fa-chevron-down arrow"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="expresoaereo.html"><i class="fa-solid fa-plane-departure"></i> Expreso Aéreo</a></li>
+            <li><a href="encomiendaterrestre.html"><i class="fa-solid fa-truck-front"></i> Encomienda Terrestre</a></li>
+            <li><a href="courieragropecuario.html"><i class="fa-solid fa-seedling"></i> Courier Agropecuario</a></li>
+            <li><a href="servicios.html"><i class="fa-solid fa-list-check"></i> Todos los Servicios</a></li>
+          </ul>
+        </li>
+        <li><a href="requisitos.html"><i class="fa-solid fa-route"></i> Cómo Funciona</a></li>
+        <li><a href="formulario.html"><i class="fa-solid fa-calculator"></i> Cotizador</a></li>
+        <li><a href="contacto.html"><i class="fa-solid fa-location-dot"></i> Ubicación</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="service-hero">
+      <span class="badge econo"><i class="fa-solid fa-truck"></i> Transporte Terrestre Económico</span>
+      <h1>Encomienda Terrestre Interprovincial</h1>
+      <p>Servicio diario de carga general, cajas y fardos conectando Tarapoto con Moyobamba, Yurimaguas, Chiclayo, Trujillo y Lima.</p>
+    </div>
+
+    <!-- HORARIOS DE SALIDA -->
+    <section class="info-block">
+      <h2><i class="fa-solid fa-calendar-days"></i> Salidas Diarias y Tiempos Estimados</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Destino desde Tarapoto</th>
+              <th>Horario de Salida</th>
+              <th>Frecuencia</th>
+              <th>Tiempo de Llegada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Moyobamba / Rioja</td>
+              <td>08:00 AM y 02:00 PM</td>
+              <td>Lunes a Domingo</td>
+              <td>3 a 4 Horas</td>
+            </tr>
+            <tr>
+              <td>Yurimaguas</td>
+              <td>10:00 AM</td>
+              <td>Lunes a Sábado</td>
+              <td>5 Horas</td>
+            </tr>
+            <tr>
+              <td>Chiclayo / Trujillo</td>
+              <td>05:00 PM</td>
+              <td>Diario</td>
+              <td>18 a 24 Horas</td>
+            </tr>
+            <tr>
+              <td>Lima Metropolitana</td>
+              <td>06:30 PM</td>
+              <td>Diario</td>
+              <td>28 a 32 Horas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- COMPRA DE ESPACIO -->
+    <section class="buy-section">
+      <h2><i class="fa-solid fa-box-archive"></i> Elige el Tamaño de tu Carga</h2>
+      <div class="routes-grid">
+        <div class="route-card">
+          <i class="fa-solid fa-box icon-card"></i>
+          <h3>Caja Estándar (hasta 10 kg)</h3>
+          <p class="price-tag">Desde S/ 15.00</p>
+          <p>Ideal para ropa, repuestos peq. y encomiendas familiares.</p>
+          <a href="formulario.html?servicio=terrestre_caja" class="btn-select">Reservar Espacio</a>
+        </div>
+
+        <div class="route-card">
+          <i class="fa-solid fa-boxes-packing icon-card"></i>
+          <h3>Fardo / Bulto Mediano (20-40 kg)</h3>
+          <p class="price-tag">Desde S/ 35.00</p>
+          <p>Ideal para mercadería comercial o mudanzas ligeras.</p>
+          <a href="formulario.html?servicio=terrestre_fardo" class="btn-select">Reservar Espacio</a>
+        </div>
+
+        <div class="route-card">
+          <i class="fa-solid fa-truck-moving icon-card"></i>
+          <h3>Carga Completa / Tarima</h3>
+          <p class="price-tag">Tarifa por Volumen (m³)</p>
+          <p>Transporte corporativo masivo con boleta/factura.</p>
+          <a href="formulario.html?servicio=terrestre_masivo" class="btn-select">Cotizar Carga</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LogísticaExpress Envíos Perú — Proyecto de Diseño Web.</p>
+  </footer>
+
+</body>
+</html>

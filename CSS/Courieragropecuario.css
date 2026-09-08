@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+:root {
+  --amarillo-express: #ffb800;
+  --azul-express: #0d2c6c;
+  --verde-agro: #15803d;
+  --verde-claro: #dcfce7;
+  --gris-fondo: #f8fafc;
+  --texto-oscuro: #0f172a;
+  --texto-mutado: #64748b;
+  --borde: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--gris-fondo); color: var(--texto-oscuro); }
+h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+
+header { display: flex; justify-content: space-between; align-items: center; background: var(--azul-express); padding: 0 5%; height: 75px; position: sticky; top: 0; z-index: 1000; }
+.logo { font-size: 1.5rem; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+.logo i, .logo span { color: var(--amarillo-express); }
+header nav ul { list-style: none; display: flex; gap: 12px; }
+header nav a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; padding: 10px 16px; border-radius: 8px; }
+header nav a:hover { background: rgba(255,255,255,0.1); color: var(--amarillo-express); }
+
+.dropdown { position: relative; }
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--azul-express); min-width: 230px; border-top: 3px solid var(--amarillo-express); border-radius: 0 0 10px 10px; list-style: none; padding: 6px 0; }
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu a { display: block; padding: 10px 16px; }
+
+main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+.service-hero { text-align: center; margin-bottom: 40px; }
+.service-hero h1 { color: var(--azul-express); font-size: 2.2rem; margin: 10px 0; }
+.badge.agro { background: var(--verde-claro); color: var(--verde-agro); padding: 6px 16px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; }
+
+.info-block { background: #fff; padding: 30px; border-radius: 16px; border: 1px solid var(--borde); margin-bottom: 40px; }
+.info-block h2 { color: var(--azul-express); font-size: 1.4rem; margin-bottom: 20px; }
+
+.agro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.agro-item { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 20px; text-align: center; }
+.agro-item i { font-size: 2rem; color: var(--verde-agro); margin-bottom: 10px; }
+.agro-item h3 { color: var(--verde-agro); margin-bottom: 8px; font-size: 1.1rem; }
+
+.agro-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.plan-card { background: #fff; border: 1px solid var(--borde); border-radius: 16px; padding: 30px; text-align: center; }
+.plan-card.featured { border: 2px solid var(--verde-agro); }
+.price { font-size: 2rem; font-weight: 800; color: var(--verde-agro); margin: 15px 0; }
+.btn-agro { display: block; background: var(--verde-agro); color: #fff; font-weight: 800; text-decoration: none; padding: 12px; border-radius: 8px; margin-top: 15px; }
+.btn-agro:hover { background: #166534; }
+
+footer { background: var(--azul-express); color: #fff; text-align: center; padding: 25px; margin-top: 60px; }

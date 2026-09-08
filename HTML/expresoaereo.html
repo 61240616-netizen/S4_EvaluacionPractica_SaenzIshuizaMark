@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expreso Aéreo 24H | LogísticaExpress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/expresaereo.css">
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="logo"><i class="fa-solid fa-truck-fast"></i> Logística<span>Express</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+        <li class="dropdown">
+          <a href="servicios.html" class="dropdown-btn"><i class="fa-solid fa-boxes-packing"></i> Menú Servicios <i class="fa-solid fa-chevron-down arrow"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="expresoaereo.html"><i class="fa-solid fa-plane-departure"></i> Expreso Aéreo</a></li>
+            <li><a href="encomiendaterrestre.html"><i class="fa-solid fa-truck-front"></i> Encomienda Terrestre</a></li>
+            <li><a href="courieragropecuario.html"><i class="fa-solid fa-seedling"></i> Courier Agropecuario</a></li>
+            <li><a href="servicios.html"><i class="fa-solid fa-list-check"></i> Todos los Servicios</a></li>
+          </ul>
+        </li>
+        <li><a href="requisitos.html"><i class="fa-solid fa-route"></i> Cómo Funciona</a></li>
+        <li><a href="formulario.html"><i class="fa-solid fa-calculator"></i> Cotizador</a></li>
+        <li><a href="contacto.html"><i class="fa-solid fa-location-dot"></i> Ubicación</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="service-hero">
+      <span class="badge"><i class="fa-solid fa-bolt"></i> Envíos Ultra Rápidos</span>
+      <h1>Servicio Expreso Aéreo (Tarapoto ⇄ Lima)</h1>
+      <p>Entregas prioritarias garantizadas en menos de 24 horas. Ideal para documentos legales, muestras comerciales urgentes y productos livianos.</p>
+    </div>
+
+    <!-- HORARIOS DE SALIDA -->
+    <section class="info-block">
+      <h2><i class="fa-solid fa-clock"></i> Horarios de Recepción y Vuelos Diarios</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Ruta</th>
+              <th>Cierre de Recepción</th>
+              <th>Hora de Vuelo</th>
+              <th>Disponible en Destino</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tarapoto ➔ Lima</td>
+              <td>05:00 PM (Día previo)</td>
+              <td>08:30 AM</td>
+              <td>01:00 PM (Mismo día)</td>
+            </tr>
+            <tr>
+              <td>Lima ➔ Tarapoto</td>
+              <td>06:00 PM (Día previo)</td>
+              <td>09:45 AM</td>
+              <td>02:30 PM (Mismo día)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- COMPRA / RESERVA RÁPIDA -->
+    <section class="buy-section">
+      <h2><i class="fa-solid fa-cart-shopping"></i> Comprar / Reservar Espacio Aéreo</h2>
+      <p>Selecciona tu tarifa preferida para procesar el pago o la reserva con prioridad:</p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Sobre Documentario</h3>
+          <div class="price">S/ 25.00</div>
+          <p>Hasta 1 kg — Documentos, contratos o facturas.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Entrega garantizada 24h</li>
+            <li><i class="fa-solid fa-check"></i> Monitoreo GPS</li>
+          </ul>
+          <a href="formulario.html?servicio=aereo_sobre" class="btn-buy">Comprar / Reservar</a>
+        </div>
+
+        <div class="price-card featured">
+          <span class="pop-tag">Más Vendido</span>
+          <h3>Paquete Liviano</h3>
+          <div class="price">S/ 45.00</div>
+          <p>Hasta 5 kg — Muestras, repuestos, aparatos.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Embalaje de seguridad</li>
+            <li><i class="fa-solid fa-check"></i> Prioridad en bodega</li>
+          </ul>
+          <a href="formulario.html?servicio=aereo_paquete" class="btn-buy">Comprar / Reservar</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Carga Aérea Comercial</h3>
+          <div class="price">S/ 8.50 <span>/ Kg extra</span></div>
+          <p>De 6 kg a 50 kg — Envíos corporativos masivos.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Guía de Remisión Electrónica</li>
+            <li><i class="fa-solid fa-check"></i> Seguro opcional</li>
+          </ul>
+          <a href="formulario.html?servicio=aereo_carga" class="btn-buy">Comprar / Reservar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LogísticaExpress Envíos Perú — Proyecto de Diseño Web.</p>
+  </footer>
+
+</body>
+</html>
