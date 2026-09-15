@@ -52,14 +52,6 @@ header {
   font-weight: 800;
   color: var(--blanco);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo i,
-.logo span {
-  color: var(--amarillo-express);
 }
 
 header nav ul {
@@ -77,9 +69,6 @@ header nav a {
   padding: 10px 16px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
 }
 
 header nav a:hover,
@@ -113,8 +102,7 @@ header nav a.active {
 }
 
 .dropdown-menu a {
-  display: flex;
-  align-items: center;
+  display: block;
   padding: 12px 20px;
   border-radius: 0;
   font-size: 0.88rem;
@@ -163,13 +151,6 @@ main {
 .seccion-titulo h2 {
   color: var(--azul-express);
   font-size: 1.6rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.seccion-titulo h2 i {
-  color: var(--amarillo-express);
 }
 
 .seccion-titulo p {
@@ -215,6 +196,7 @@ main {
 .servicio-content h3 {
   color: var(--azul-express);
   font-size: 1.2rem;
+  margin-top: 8px;
   margin-bottom: 10px;
 }
 
@@ -247,6 +229,23 @@ main {
   color: #b45309;
 }
 
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: var(--azul-express);
+  color: var(--blanco);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--amarillo-express);
+  color: var(--azul-express);
+}
+
 /* ==================== TRÁMITES ESPECIALES ==================== */
 .tramites-container {
   display: grid;
@@ -260,13 +259,7 @@ main {
   border-radius: 14px;
   border: 1px solid var(--borde);
   box-shadow: var(--sombra);
-  text-align: center;
-}
-
-.tramite-box i {
-  font-size: 2.2rem;
-  color: var(--azul-express);
-  margin-bottom: 15px;
+  text-align: left;
 }
 
 .tramite-box h3 {
@@ -310,11 +303,6 @@ main {
   border-bottom: none;
 }
 
-.catalogo-tabla td i {
-  color: var(--amarillo-express);
-  margin-right: 8px;
-}
-
 /* ==================== PIE DE PÁGINA ==================== */
 footer {
   background-color: var(--azul-express);
@@ -342,6 +330,7 @@ footer {
 .footer-col p {
   color: #cbd5e1;
   font-size: 0.9rem;
+  margin-bottom: 6px;
 }
 
 .footer-col ul {
@@ -352,6 +341,10 @@ footer {
   color: #cbd5e1;
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.footer-col ul a:hover {
+  color: var(--amarillo-express);
 }
 
 .footer-bottom {
