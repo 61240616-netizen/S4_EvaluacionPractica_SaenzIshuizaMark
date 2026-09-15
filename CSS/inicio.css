@@ -173,8 +173,10 @@ header nav a.active {
   color: var(--texto-oscuro);
   padding: 30px;
   border-radius: 16px;
-  /* EFECTO 2: Sombra en la línea de tiempo y contenedor */
-  .tracking-container {
+}
+
+/* EFECTO 2: Sombra en la línea de tiempo y contenedor */
+.tracking-container {
   box-shadow: 0 10px 25px rgba(13, 44, 108, 0.15);
   border-radius: 12px;
   padding: 25px;
@@ -199,75 +201,6 @@ header nav a.active {
 @keyframes flotarPaquete {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
-}
-
-.timeline {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin-top: 20px;
-}
-
-/* ANIMACIÓN 1: Progreso en la línea de tiempo */
-.timeline-bar {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  height: 4px;
-  background: var(--amarillo-express);
-  z-index: 1;
-  animation: animarProgreso 2s ease-out forwards;
-}
-
-@keyframes animarProgreso {
-  from { width: 0%; }
-  to { width: 66%; } /* Simula avance hasta 'Reparto' */
-}
-
-.timeline-step {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-.step-dot {
-  width: 16px;
-  height: 16px;
-  background-color: var(--blanco);
-  border: 3px solid var(--borde);
-  border-radius: 50%;
-  margin: 0 auto 6px;
-}
-
-.timeline-step.active .step-dot {
-  border-color: var(--amarillo-express);
-  background-color: var(--azul-express);
-}
-
-.step-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--texto-mutado);
-}
-
-/* TRANSICIÓN 2: Color en el botón de cotización/rastreo */
-.btn-primary,
-.btn-cotizar {
-  background-color: var(--azul-express);
-  color: var(--blanco);
-  border: none;
-  padding: 14px 28px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-primary:hover,
-.btn-cotizar:hover {
-  background-color: var(--amarillo-express);
-  color: var(--azul-express);
 }
 
 /* RF-30.2: Línea de tiempo de seguimiento */
@@ -338,6 +271,26 @@ header nav a.active {
 }
 
 .timeline-step.active .step-label {
+  color: var(--azul-express);
+}
+
+/* TRANSICIÓN 2: Color en botones */
+.btn-primary,
+.btn-cotizar {
+  background-color: var(--azul-express);
+  color: var(--blanco);
+  border: none;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-cotizar:hover {
+  background-color: var(--amarillo-express);
   color: var(--azul-express);
 }
 
