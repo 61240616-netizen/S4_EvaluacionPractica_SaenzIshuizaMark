@@ -383,8 +383,9 @@ footer {
   .page-header h1 {
     font-size: 1.8rem;
   }
+} /* <--- LA MEDIA QUERY DEBE CERRAR AQUÍ */
 
-  /* ==================== FORMULARIO COTIZADOR (RF-30.1) ==================== */
+/* ==================== FORMULARIO COTIZADOR (RF-30.1) ==================== */
 .cotizador-card {
   background-color: var(--blanco);
   max-width: 550px;
@@ -473,5 +474,4 @@ footer {
     opacity: 1;
     transform: scale(1);
   }
-}
 }
