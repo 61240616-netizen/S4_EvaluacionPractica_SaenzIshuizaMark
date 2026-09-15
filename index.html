@@ -6,30 +6,26 @@
   <meta name="description" content="LogísticaExpress Perú - Envíos, encomiendas y mensajería en Tarapoto y la Amazonía.">
   <title>Inicio — LogísticaExpress Perú</title>
   <link rel="stylesheet" href="CSS/inicio.css">
-  <!-- FontAwesome para los íconos del CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <!-- ENCABEZADO Y NAVEGACIÓN -->
   <header>
-    <a href="index.html" class="logo">
-      <i class="fa-solid fa-truck-fast"></i> Logística<span>Express</span>
-    </a>
+    <a href="index.html" class="logo">LogísticaExpress</a>
     <nav>
       <ul>
-        <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Inicio</a></li>
-        <li><a href="HTML/servicios.html"><i class="fa-solid fa-boxes-packing"></i> Servicios</a></li>
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="HTML/servicios.html">Servicios</a></li>
         <li class="dropdown">
-          <a href="HTML/requisitos.html"><i class="fa-solid fa-clipboard-list"></i> Cómo funciona <i class="fa-solid fa-chevron-down"></i></a>
+          <a href="HTML/requisitos.html">Cómo funciona</a>
           <ul class="dropdown-menu">
             <li><a href="HTML/requisitos.html#pasos">Pasos para enviar</a></li>
             <li><a href="HTML/requisitos.html#requisitos">Requisitos por tipo</a></li>
             <li><a href="HTML/requisitos.html#prohibidos">Artículos prohibidos</a></li>
           </ul>
         </li>
-        <li><a href="HTML/formulario.html"><i class="fa-solid fa-calculator"></i> Cotizador</a></li>
-        <li><a href="HTML/contacto.html"><i class="fa-solid fa-location-dot"></i> Ubicación</a></li>
+        <li><a href="HTML/formulario.html">Cotizador</a></li>
+        <li><a href="HTML/contacto.html">Ubicación</a></li>
       </ul>
     </nav>
   </header>
@@ -39,21 +35,18 @@
     <section class="hero" id="top">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <span class="badge"><i class="fa-solid fa-location-crosshairs"></i> Sede Tarapoto</span>
+        <span class="badge">Sede Tarapoto</span>
         <h1>Tu enlace logístico seguro en San Martín y todo el Perú</h1>
-        <p>Transporte interprovincial de encomiendas, carga ligera y courier especializado para café y cacao.</p>
+        <p>Transporte interprovincial de encomiendas, carga ligera y courier para café y cacao.</p>
 
-        <!-- CAJA DE RASTREO DE GUÍA -->
+        <!-- FORMULARIO DE RASTREO -->
         <div class="rastreo-box">
-          <h3><i class="fa-solid fa-magnifying-glass"></i> Rastrear paquete o encomienda</h3>
+          <h3>Rastrear paquete o encomienda</h3>
           <form class="rastreo-form" action="#" method="GET">
             <div class="input-group">
-              <i class="fa-solid fa-barcode"></i>
-              <input type="text" name="tracking" placeholder="Ej: TRP-2026-889" required>
+              <input type="text" name="tracking" placeholder="Ingrese N° de guía (Ej: TRP-2026-889)" required>
             </div>
-            <button type="submit" class="btn-primary">
-              Rastrear <i class="fa-solid fa-arrow-right"></i>
-            </button>
+            <button type="submit" class="btn-primary">Rastrear</button>
           </form>
         </div>
       </div>
@@ -79,7 +72,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN DE SERVICIOS RESUMEN -->
+    <!-- CATÁLOGO DE SERVICIOS -->
     <section class="resumen-inicio" id="servicios">
       <div class="section-title">
         <h2>Servicios de transporte y encomiendas</h2>
@@ -87,45 +80,39 @@
       </div>
 
       <div class="resumen-grid">
-        <!-- TARJETA 1 -->
         <article class="resumen-card">
           <div class="card-img-wrapper">
             <img src="aereo.jpg" alt="Carga Aérea Express">
             <span class="card-badge">Menos de 24 hrs</span>
           </div>
           <div class="resumen-card-body">
-            <div class="card-icon"><i class="fa-solid fa-plane"></i></div>
             <h3>Express Aéreo</h3>
             <p>Conexiones diarias directas entre Tarapoto y Lima. Ideal para documentos urgentes y muestras comerciales.</p>
-            <a href="HTML/expresoaereo.html" class="link-btn">Ver horarios <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="HTML/expresoaereo.html" class="link-btn">Ver horarios →</a>
           </div>
         </article>
 
-        <!-- TARJETA 2 -->
         <article class="resumen-card">
           <div class="card-img-wrapper">
             <img src="terrestre.jpg" alt="Encomienda Terrestre">
             <span class="card-badge">Salidas Diarias</span>
           </div>
           <div class="resumen-card-body">
-            <div class="card-icon"><i class="fa-solid fa-truck"></i></div>
             <h3>Encomienda Terrestre</h3>
             <p>Salidas diarias hacia Moyobamba, Yurimaguas, Chiclayo, Trujillo y Lima con tarifas accesibles.</p>
-            <a href="HTML/encomiendaterrestre.html" class="link-btn">Ver rutas <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="HTML/encomiendaterrestre.html" class="link-btn">Ver rutas →</a>
           </div>
         </article>
 
-        <!-- TARJETA 3 -->
         <article class="resumen-card">
           <div class="card-img-wrapper">
             <img src="agropecuario.jpg" alt="Courier Agropecuario">
             <span class="card-badge">Especializado</span>
           </div>
           <div class="resumen-card-body">
-            <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
             <h3>Courier Agropecuario</h3>
             <p>Empaque técnico y logística adaptada para emprendedores de café, cacao y productos autóctonos.</p>
-            <a href="HTML/courieragropecuario.html" class="link-btn">Ver guía <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="HTML/courieragropecuario.html" class="link-btn">Ver guía →</a>
           </div>
         </article>
       </div>
@@ -140,17 +127,14 @@
 
       <div class="features-grid">
         <div class="feature-box">
-          <i class="fa-solid fa-shield-halved"></i>
           <h3>Seguridad garantizada</h3>
           <p>Tu paquete viaja asegurado con protocolo de embalaje y precinto de seguridad.</p>
         </div>
         <div class="feature-box">
-          <i class="fa-solid fa-location-dot"></i>
           <h3>Rastreo en tiempo real</h3>
           <p>Monitorea el estado exacto de tu encomienda desde el origen hasta el punto final.</p>
         </div>
         <div class="feature-box">
-          <i class="fa-solid fa-building"></i>
           <h3>Sedes cercanas</h3>
           <p>Múltiples oficinas estratégicas para recojo y envío directo en San Martín.</p>
         </div>
