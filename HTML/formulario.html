@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cotizador de envíos - LogísticaExpress">
   <title>Cotizador — LogísticaExpress</title>
-  <link rel="stylesheet" href="../CSS/servicios.css">
+  <!-- Enlace a formulario.css -->
+  <link rel="stylesheet" href="../CSS/formulario.css">
 </head>
 <body>
 
@@ -36,42 +37,79 @@
       <p class="subtitulo">Calcula el costo estimado de tu paquete al instante.</p>
     </section>
 
-    <section class="cotizador-card">
-      <!-- RF-30.1: Formulario con Origen, Destino y Peso -->
-      <form class="cotizador-form">
-        <div class="form-group">
-          <label for="origen">Origen</label>
-          <select id="origen" required>
-            <option value="">Seleccione origen</option>
-            <option value="tarapoto" selected>Tarapoto</option>
-            <option value="moyobamba">Moyobamba</option>
-            <option value="lima">Lima</option>
-          </select>
+    <div class="cotizador-wrapper">
+      <!-- TARJETA DEL FORMULARIO -->
+      <section class="form-card">
+        <form class="cotizador-form" id="form-cotizador">
+          <div class="form-group">
+            <label for="origen">Origen <span class="req">*</span></label>
+            <select id="origen" required>
+              <option value="">Seleccione origen</option>
+              <option value="tarapoto">Tarapoto</option>
+              <option value="moyobamba">Moyobamba</option>
+              <option value="lima">Lima</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="destino">Destino <span class="req">*</span></label>
+            <select id="destino" required>
+              <option value="">Seleccione destino</option>
+              <option value="lima">Lima</option>
+              <option value="chiclayo">Chiclayo</option>
+              <option value="yurimaguas">Yurimaguas</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="peso">Peso (kg) <span class="req">*</span></label>
+            <input type="number" id="peso" min="0.1" step="0.1" required placeholder="Ej: 2.5">
+          </div>
+
+          <button type="submit" class="btn-cotizar">Calcular Costo</button>
+        </form>
+
+        <!-- RESULTADO ANIMADO DE COTIZACIÓN -->
+        <div id="resultado-cotizacion" class="confirmacion-cotizacion">
+          <!-- Se actualiza dinámicamente -->
         </div>
 
-        <div class="form-group">
-          <label for="destino">Destino</label>
-          <select id="destino" required>
-            <option value="">Seleccione destino</option>
-            <option value="lima" selected>Lima</option>
-            <option value="chiclayo">Chiclayo</option>
-            <option value="yurimaguas">Yurimaguas</option>
-          </select>
+        <!-- LÍNEA DE TIEMPO ANIMADA DEL ENVÍO ESTIMADO -->
+        <div id="timeline-cotizacion" class="timeline-wrapper" style="display: none;">
+          <p class="timeline-title">Proyección del proceso de envío:</p>
+          <div class="timeline">
+            <div class="timeline-bg"></div>
+            <div class="timeline-bar"></div>
+
+            <div class="timeline-step active">
+              <div class="step-dot"></div>
+              <span class="step-label">Recepción</span>
+            </div>
+            <div class="timeline-step active">
+              <div class="step-dot"></div>
+              <span class="step-label">En Tránsito</span>
+            </div>
+            <div class="timeline-step active">
+              <div class="step-dot"></div>
+              <span class="step-label">En Reparto</span>
+            </div>
+            <div class="timeline-step">
+              <div class="step-dot"></div>
+              <span class="step-label">Entregado</span>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="form-group">
-          <label for="peso">Peso (kg)</label>
-          <input type="number" id="peso" min="0.1" step="0.1" required placeholder="Ej: 2.5">
+      <!-- SIDEBAR INFORMATIVO -->
+      <aside class="info-sidebar">
+        <div class="sidebar-box">
+          <h3>¿Necesitas ayuda personalizada?</h3>
+          <p>Escríbenos por WhatsApp para cotizaciones corporativas o carga pesada.</p>
+          <a href="#" class="btn-whatsapp">Contactar por WhatsApp</a>
         </div>
-
-        <button type="submit" class="btn-cotizar">Calcular Costo</button>
-      </form>
-
-      <!-- ANIMACIÓN 2: Confirmación animada -->
-      <div class="confirmacion-cotizacion">
-        Estimado: S/ 25.00 soles
-      </div>
-    </section>
+      </aside>
+    </div>
   </main>
 
   <!-- PIE DE PÁGINA -->
@@ -95,5 +133,59 @@
     </div>
   </footer>
 
+  <!-- SCRIPT PARA CÁLCULO DINÁMICO Y ANIMACIONES -->
+  <script>
+    document.getElementById('form-cotizador').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const origen = document.getElementById('origen').value;
+      const destino = document.getElementById('destino').value;
+      const peso = parseFloat(document.getElementById('peso').value);
+      const resultadoDiv = document.getElementById('resultado-cotizacion');
+      const timelineDiv = document.getElementById('timeline-cotizacion');
+
+      if (origen === destino) {
+        resultadoDiv.className = "confirmacion-cotizacion confirmacion-pop error";
+        resultadoDiv.style.backgroundColor = "#fee2e2";
+        resultadoDiv.style.color = "#991b1b";
+        resultadoDiv.style.borderColor = "#fca5a5";
+        resultadoDiv.innerHTML = "El origen y el destino no pueden ser iguales.";
+        timelineDiv.style.display = "none";
+        return;
+      }
+
+      // Cálculo de costo dinámico según origen, destino y peso
+      let base = 12;
+      let precioKg = 4.5;
+
+      if ((origen === 'tarapoto' && destino === 'lima') || (origen === 'lima' && destino === 'tarapoto')) {
+        base = 15;
+        precioKg = 5.5;
+      } else if (destino === 'chiclayo') {
+        base = 14;
+        precioKg = 5.0;
+      }
+
+      const total = base + (peso * precioKg);
+
+      // Mostrar el resultado con animación
+      resultadoDiv.className = "confirmacion-cotizacion";
+      resultadoDiv.style.backgroundColor = "#dcfce7";
+      resultadoDiv.style.color = "#15803d";
+      resultadoDiv.style.borderColor = "#bbf7d0";
+      
+      // Reiniciar animación CSS
+      void resultadoDiv.offsetWidth; 
+      resultadoDiv.classList.add('confirmacion-pop');
+      resultadoDiv.innerHTML = `Estimado: S/ ${total.toFixed(2)} soles`;
+
+      // Mostrar y reiniciar la animación de la línea de tiempo
+      timelineDiv.style.display = 'block';
+      const bar = timelineDiv.querySelector('.timeline-bar');
+      bar.style.animation = 'none';
+      void bar.offsetWidth;
+      bar.style.animation = 'animarProgreso 2.5s ease-out forwards';
+    });
+  </script>
 </body>
 </html>
