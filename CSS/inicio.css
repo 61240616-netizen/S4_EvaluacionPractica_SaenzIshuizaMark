@@ -236,7 +236,7 @@ header nav a.active {
 
 .input-group input {
   width: 100%;
-  padding: 16px 16px 16px 48px;
+  padding: 16px;
   border: none;
   border-radius: 10px;
   font-size: 1rem;
