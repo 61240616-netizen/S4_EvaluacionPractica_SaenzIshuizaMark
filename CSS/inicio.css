@@ -40,7 +40,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--azul-express);
+  /* EFECTO 1: Degradado en el encabezado */
+  background: linear-gradient(135deg, var(--azul-express) 0%, var(--azul-hover) 100%);
   padding: 0 5%;
   height: 75px;
   position: sticky;
@@ -54,14 +55,6 @@ header {
   font-weight: 800;
   color: var(--blanco);
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.logo i,
-.logo span {
-  color: var(--amarillo-express);
 }
 
 header nav ul {
@@ -71,6 +64,7 @@ header nav ul {
   gap: 12px;
 }
 
+/* TRANSICIÓN 3: Color en el menú */
 header nav a {
   color: var(--blanco);
   text-decoration: none;
@@ -78,10 +72,7 @@ header nav a {
   font-size: 0.9rem;
   padding: 10px 16px;
   border-radius: 8px;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 header nav a:hover,
@@ -108,36 +99,18 @@ header nav a.active {
   border-top: 3px solid var(--amarillo-express);
   list-style: none;
   padding: 6px 0;
-  animation: fadeIn 0.2s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-.dropdown-menu li {
-  width: 100%;
-}
-
 .dropdown-menu a {
-  display: flex;
-  align-items: center;
+  display: block;
   padding: 12px 20px;
   border-radius: 0;
   font-size: 0.88rem;
   color: var(--blanco);
-  width: 100%;
 }
 
 .dropdown-menu a:hover {
@@ -151,7 +124,7 @@ header nav a.active {
   background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
   color: var(--blanco);
   text-align: center;
-  padding: 100px 20px 120px;
+  padding: 80px 20px 100px;
 }
 
 .hero-overlay {
@@ -166,7 +139,7 @@ header nav a.active {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
@@ -194,73 +167,169 @@ header nav a.active {
   margin-bottom: 35px;
 }
 
-/* CAJA DE RASTREO DE GUÍA */
+/* ==================== SEGUIMIENTO Y RASTREO (RF-30.2) ==================== */
 .rastreo-box {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--texto-oscuro);
   padding: 30px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  /* EFECTO 2: Sombra en la línea de tiempo y contenedor */
+  box-shadow: 0 15px 35px rgba(13, 44, 108, 0.2);
+  text-align: left;
+}
+
+.rastreo-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .rastreo-box h3 {
-  font-size: 1.1rem;
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  font-size: 1.2rem;
+  color: var(--azul-express);
+}
+
+/* EFECTO 3: Ícono SVG animado */
+.svg-paquete-animado {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  animation: flotarPaquete 3s ease-in-out infinite;
+}
+
+@keyframes flotarPaquete {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 .rastreo-form {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 .input-group {
   flex: 1;
-  min-width: 250px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.input-group i {
-  position: absolute;
-  left: 16px;
-  color: var(--azul-express);
-  font-size: 1.1rem;
+  min-width: 240px;
 }
 
 .input-group input {
   width: 100%;
-  padding: 16px;
-  border: none;
+  padding: 14px 16px;
+  border: 1px solid var(--borde);
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   outline: none;
 }
 
-.btn-primary {
-  background-color: var(--amarillo-express);
-  color: var(--azul-express);
+/* TRANSICIÓN 2: Color en el botón de cotización/rastreo */
+.btn-primary,
+.btn-cotizar {
+  background-color: var(--azul-express);
+  color: var(--blanco);
   border: none;
-  padding: 16px 30px;
-  font-weight: 800;
-  font-size: 1rem;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 0.95rem;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-color: var(--amarillo-hover);
-  transform: translateY(-2px);
+.btn-primary:hover,
+.btn-cotizar:hover {
+  background-color: var(--amarillo-express);
+  color: var(--azul-express);
+}
+
+/* RF-30.2: Línea de tiempo de seguimiento */
+.timeline-wrapper {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--borde);
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 20px 0 10px;
+}
+
+.timeline-bg {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--borde);
+  z-index: 1;
+}
+
+/* ANIMACIÓN 1: Progreso en la línea de tiempo del seguimiento */
+.timeline-bar {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  height: 4px;
+  background-color: var(--amarillo-express);
+  z-index: 2;
+  animation: animarProgreso 2.5s ease-out forwards;
+}
+
+@keyframes animarProgreso {
+  from { width: 0%; }
+  to { width: 66%; } /* Estado en Tránsito / Reparto */
+}
+
+.timeline-step {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  flex: 1;
+}
+
+.step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--blanco);
+  border: 3px solid var(--borde);
+  margin: 0 auto 8px;
+}
+
+.timeline-step.active .step-dot {
+  border-color: var(--amarillo-express);
+  background-color: var(--azul-express);
+}
+
+.step-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto-mutado);
+}
+
+.timeline-step.active .step-label {
+  color: var(--azul-express);
+}
+
+/* ANIMACIÓN 2: Confirmación animada al cotizar envío */
+.confirmacion-cotizacion {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #dcfce7;
+  color: #15803d;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+  animation: confirmacionPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes confirmacionPop {
+  0% { opacity: 0; transform: scale(0.6); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 /* ==================== ESTADÍSTICAS ==================== */
@@ -295,7 +364,7 @@ header nav a.active {
   font-weight: 600;
 }
 
-/* ==================== SECCIÓN TARJETAS RESUMEN ==================== */
+/* ==================== TARJETAS DE SERVICIOS ==================== */
 .resumen-inicio {
   padding: 40px 20px;
   max-width: 1200px;
@@ -327,7 +396,7 @@ header nav a.active {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--sombra);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--borde);
   display: flex;
   flex-direction: column;
@@ -348,11 +417,6 @@ header nav a.active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.resumen-card:hover .card-img-wrapper img {
-  transform: scale(1.08);
 }
 
 .card-badge {
@@ -374,19 +438,6 @@ header nav a.active {
   flex-direction: column;
 }
 
-.card-icon {
-  width: 45px;
-  height: 45px;
-  background: var(--azul-claro);
-  color: var(--azul-express);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-}
-
 .resumen-card-body h3 {
   color: var(--azul-express);
   margin-bottom: 10px;
@@ -404,9 +455,6 @@ header nav a.active {
   color: var(--azul-express);
   font-weight: 700;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   font-size: 0.9rem;
 }
 
@@ -414,14 +462,14 @@ header nav a.active {
   color: var(--amarillo-hover);
 }
 
-/* ==================== VENTAJAS / POR QUÉ ELEGIRNOS ==================== */
+/* ==================== PUNTOS DE RECOJO (UBICACIÓN) ==================== */
 .features-section {
   background-color: var(--blanco);
   padding: 70px 20px;
   margin-top: 60px;
 }
 
-.features-grid {
+.puntos-recojo-grid {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
@@ -429,23 +477,43 @@ header nav a.active {
   gap: 30px;
 }
 
-.feature-box {
-  text-align: center;
+/* ANIMACIÓN 3: Aparición progresiva de los puntos de recojo */
+.punto-card {
+  opacity: 0;
   padding: 30px;
   border-radius: 14px;
   background: var(--gris-fondo);
-  border: 1px solid var(--borde);
+  border: 2px solid var(--borde);
+  animation: aparicionProgresiva 0.6s ease forwards;
+  animation-delay: calc(var(--i, 1) * 0.2s);
+  /* TRANSICIÓN 1: Color en los puntos de recojo */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.feature-box i {
-  font-size: 2.5rem;
-  color: var(--amarillo-express);
-  margin-bottom: 15px;
+.punto-card:hover {
+  background-color: var(--azul-claro);
+  border-color: var(--azul-express);
 }
 
-.feature-box h3 {
+.punto-card h3 {
   color: var(--azul-express);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+.punto-card p {
+  color: var(--texto-mutado);
+  font-size: 0.9rem;
+}
+
+@keyframes aparicionProgresiva {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==================== TESTIMONIOS ==================== */
