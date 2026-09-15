@@ -174,54 +174,80 @@ header nav a.active {
   padding: 30px;
   border-radius: 16px;
   /* EFECTO 2: Sombra en la línea de tiempo y contenedor */
-  box-shadow: 0 15px 35px rgba(13, 44, 108, 0.2);
+  .tracking-container {
+  box-shadow: 0 10px 25px rgba(13, 44, 108, 0.15);
+  border-radius: 12px;
+  padding: 25px;
+  background: #ffffff;
+  color: var(--texto-oscuro);
   text-align: left;
+  margin-top: 20px;
 }
 
 .rastreo-header {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   margin-bottom: 20px;
-}
-
-.rastreo-box h3 {
-  font-size: 1.2rem;
-  color: var(--azul-express);
 }
 
 /* EFECTO 3: Ícono SVG animado */
 .svg-paquete-animado {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
   animation: flotarPaquete 3s ease-in-out infinite;
 }
 
 @keyframes flotarPaquete {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-8px); }
 }
 
-.rastreo-form {
+.timeline {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 20px;
 }
 
-.input-group {
-  flex: 1;
-  min-width: 240px;
+/* ANIMACIÓN 1: Progreso en la línea de tiempo */
+.timeline-bar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  background: var(--amarillo-express);
+  z-index: 1;
+  animation: animarProgreso 2s ease-out forwards;
 }
 
-.input-group input {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid var(--borde);
-  border-radius: 10px;
-  font-size: 0.95rem;
-  outline: none;
+@keyframes animarProgreso {
+  from { width: 0%; }
+  to { width: 66%; } /* Simula avance hasta 'Reparto' */
+}
+
+.timeline-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.step-dot {
+  width: 16px;
+  height: 16px;
+  background-color: var(--blanco);
+  border: 3px solid var(--borde);
+  border-radius: 50%;
+  margin: 0 auto 6px;
+}
+
+.timeline-step.active .step-dot {
+  border-color: var(--amarillo-express);
+  background-color: var(--azul-express);
+}
+
+.step-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto-mutado);
 }
 
 /* TRANSICIÓN 2: Color en el botón de cotización/rastreo */
