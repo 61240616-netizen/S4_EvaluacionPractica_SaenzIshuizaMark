@@ -32,25 +32,50 @@
 
   <main>
     <!-- HERO SECTION -->
-    <section class="hero" id="top">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <span class="badge">Sede Tarapoto</span>
-        <h1>Tu enlace logístico seguro en San Martín y todo el Perú</h1>
-        <p>Transporte interprovincial de encomiendas, carga ligera y courier para café y cacao.</p>
+    <section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="badge">Envíos Nacionales</span>
+    <h1>Transporte y Logística Sin Complicaciones</h1>
+    <p>Conectamos la región San Martín con todo el Perú de forma rápida y segura.</p>
 
-        <!-- FORMULARIO DE RASTREO -->
-        <div class="rastreo-box">
-          <h3>Rastrear paquete o encomienda</h3>
-          <form class="rastreo-form" action="#" method="GET">
-            <div class="input-group">
-              <input type="text" name="tracking" placeholder="Ingrese N° de guía (Ej: TRP-2026-889)" required>
-            </div>
-            <button type="submit" class="btn-primary">Rastrear</button>
-          </form>
+    <!-- ==================== AQUÍ AGREGAS EL MÓDULO ==================== -->
+    <div class="tracking-container">
+      <div class="rastreo-header">
+        <!-- EFECTO 3: Ícono SVG de paquete animado -->
+        <svg class="svg-paquete-animado" viewBox="0 0 64 64" width="64" height="64">
+          <path fill="#ffb800" d="M32 4L4 18v28l28 14 28-14V18L32 4z"/>
+          <path fill="#e0a200" d="M32 4v28l28-14L32 4z"/>
+          <path fill="#0d2c6c" d="M4 18l28 14v28L4 46V18z"/>
+        </svg>
+        <h3>Seguimiento de envío en tiempo real</h3>
+      </div>
+
+      <!-- RF-30.2: Línea de tiempo -->
+      <div class="timeline">
+        <div class="timeline-bar"></div>
+        <div class="timeline-step active">
+          <div class="step-dot"></div>
+          <span class="step-label">Recibido</span>
+        </div>
+        <div class="timeline-step active">
+          <div class="step-dot"></div>
+          <span class="step-label">Tránsito</span>
+        </div>
+        <div class="timeline-step active">
+          <div class="step-dot"></div>
+          <span class="step-label">Reparto</span>
+        </div>
+        <div class="timeline-step">
+          <div class="step-dot"></div>
+          <span class="step-label">Entregado</span>
         </div>
       </div>
-    </section>
+    </div>
+    <!-- ================================================================ -->
+
+  </div>
+</section>
 
     <!-- ESTADÍSTICAS -->
     <section class="stats-bar">
